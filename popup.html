@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anti-Tracker Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Anti-Tracker Tool</h2>
+  <p>Trackers are being blocked!</p>
+  <button id="openOptions">Settings</button>
+
+  <script>
+    document.getElementById("openOptions").addEventListener("click", () => {
+      chrome.runtime.openOptionsPage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anti-Tracker Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Extension Settings</h2>
+  <label>
+    <input type="checkbox" id="blockAds" /> Block Ads
+  </label>
+  <button id="save">Save Settings</button>
+
+  <script>
+    const blockAdsCheckbox = document.getElementById("blockAds");
+
+    // Load settings from storage
+    chrome.storage.sync.get(["blockAds"], (data) => {
+      blockAdsCheckbox.checked = data.blockAds || false;
+    });
+
+    // Save settings to storage
+    document.getElementById("save").addEventListener("click", () => {
+      chrome.storage.sync.set({ blockAds: blockAdsCheckbox.checked }, () => {
+        alert("Settings saved!");
+      });
+    });
+  </script>
+</body>
+</html>
