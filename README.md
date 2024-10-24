@@ -19,7 +19,6 @@ Upon opening the extension, users will see a rating out of 10 that reflects the 
 2. Security Protocols.
 3. User Feedback.
 
-
 ### Installation
 1.Download files from GitHub.
 2.Extract the zip files.
